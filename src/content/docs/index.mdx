@@ -1,0 +1,31 @@
+---
+title: Daily Coding Notes
+description: Tracking my daily progress and coding notes as I learn web development.
+template: splash
+hero:
+  tagline: 'A structured journal of concepts, syntax, projects, and daily wins in my coding journey.'
+  image:
+    file: ../../assets/houston.webp
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Browse Notes by Topic
+
+<CardGrid>
+  <LinkCard
+    title='HTML Notes'
+    description='Learn the building blocks of web pages, elements, semantic tags, and document structures.'
+    href='/html/intro/'
+  />
+  <LinkCard
+    title='CSS Notes'
+    description='Learn styling, typography, the Box Model, layouts (Flexbox, Grid), and custom designs.'
+    href='/css/intro/'
+  />
+  <LinkCard
+    title='JavaScript Notes'
+    description='Master variables, functions, DOM manipulation, async operations, and modern ES6+ features.'
+    href='/javascript/intro/'
+  />
+</CardGrid>

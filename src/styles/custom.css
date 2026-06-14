@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
+
+/* Font Family Configurations */
+:root {
+  --sl-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --sl-font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--sl-font-display) !important;
+}
+
+/* Hide theme select / toggler component in navigation header */
+starlight-theme-select {
+  display: none !important;
+}
+
+/* Force light mode to use identical colors and styles as dark mode */
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  color-scheme: dark !important;
+
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-gray-1: hsl(224, 20%, 94%);
+  --sl-color-gray-2: hsl(224, 6%, 77%);
+  --sl-color-gray-3: hsl(224, 6%, 56%);
+  --sl-color-gray-4: hsl(224, 7%, 36%);
+  --sl-color-gray-5: hsl(224, 10%, 23%);
+  --sl-color-gray-6: hsl(224, 14%, 16%);
+  --sl-color-black: hsl(224, 10%, 10%);
+
+  --sl-color-orange-low: hsl(var(--sl-hue-orange), 39%, 22%);
+  --sl-color-orange: hsl(var(--sl-hue-orange), 82%, 63%);
+  --sl-color-orange-high: hsl(var(--sl-hue-orange), 82%, 87%);
+  --sl-color-green-low: hsl(var(--sl-hue-green), 39%, 22%);
+  --sl-color-green: hsl(var(--sl-hue-green), 82%, 63%);
+  --sl-color-green-high: hsl(var(--sl-hue-green), 82%, 80%);
+  --sl-color-blue-low: hsl(var(--sl-hue-blue), 54%, 20%);
+  --sl-color-blue: hsl(var(--sl-hue-blue), 100%, 60%);
+  --sl-color-blue-high: hsl(var(--sl-hue-blue), 100%, 87%);
+  --sl-color-purple-low: hsl(var(--sl-hue-purple), 39%, 22%);
+  --sl-color-purple: hsl(var(--sl-hue-purple), 82%, 63%);
+  --sl-color-purple-high: hsl(var(--sl-hue-purple), 82%, 89%);
+  --sl-color-red-low: hsl(var(--sl-hue-red), 39%, 22%);
+  --sl-color-red: hsl(var(--sl-hue-red), 82%, 63%);
+  --sl-color-red-high: hsl(var(--sl-hue-red), 82%, 87%);
+
+  --sl-color-accent-low: hsl(224, 54%, 20%);
+  --sl-color-accent: hsl(224, 100%, 60%);
+  --sl-color-accent-high: hsl(224, 100%, 85%);
+
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-accent-high);
+  --sl-color-text-invert: var(--sl-color-accent-low);
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-gray-6);
+  --sl-color-bg-sidebar: var(--sl-color-gray-6);
+  --sl-color-bg-inline-code: var(--sl-color-gray-5);
+  --sl-color-bg-accent: var(--sl-color-accent-high);
+  --sl-color-hairline-light: var(--sl-color-gray-5);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-black);
+
+  --sl-color-backdrop-overlay: hsla(223, 13%, 10%, 0.66);
+
+  /* Shadows (dark mode) */
+  --sl-shadow-sm:
+    0px 1px 1px hsla(0, 0%, 0%, 0.12), 0px 2px 1px hsla(0, 0%, 0%, 0.24);
+  --sl-shadow-md:
+    0px 8px 4px hsla(0, 0%, 0%, 0.08), 0px 5px 2px hsla(0, 0%, 0%, 0.08),
+    0px 3px 2px hsla(0, 0%, 0%, 0.12), 0px 1px 1px hsla(0, 0%, 0%, 0.15);
+  --sl-shadow-lg:
+    0px 25px 7px hsla(0, 0%, 0%, 0.03), 0px 16px 6px hsla(0, 0%, 0%, 0.1),
+    0px 9px 5px hsla(223, 13%, 10%, 0.33), 0px 4px 4px hsla(0, 0%, 0%, 0.75),
+    0px 4px 2px hsla(0, 0%, 0%, 0.25);
+}
+
+html[data-has-hero] .page {
+  background-color: var(--sl-color-black) !important;
+  background-image:
+    -moz-radial-gradient(
+      50% -20%,
+      circle,
+      hsla(224, 100%, 55%, 0.15),
+      transparent 55%
+    ),
+    -moz-radial-gradient(
+        10% 70%,
+        circle,
+        hsla(260, 100%, 55%, 0.07),
+        transparent 45%
+      ),
+    -moz-radial-gradient(
+        90% 70%,
+        circle,
+        hsla(290, 100%, 55%, 0.07),
+        transparent 45%
+      ) !important;
+  background-image:
+    radial-gradient(
+      circle at 50% -20%,
+      hsla(224, 100%, 55%, 0.15),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 10% 70%,
+      hsla(260, 100%, 55%, 0.07),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      hsla(290, 100%, 55%, 0.07),
+      transparent 45%
+    ) !important;
+  background-attachment: fixed;
+}
+
+.site-title {
+  font-family: var(--sl-font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 1.45rem !important;
+}
+
+/* Hero Section Responsiveness & Custom Layout */
+html[data-has-hero] .hero {
+  display: -moz-box !important;
+  display: flex !important;
+  -moz-box-orient: vertical !important;
+  -moz-box-direction: reverse !important;
+  flex-direction: column-reverse !important;
+  -moz-box-align: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 2.5rem !important;
+  max-width: 76rem !important;
+  margin: 0 auto !important;
+  padding-block: 4rem 2rem !important;
+  border-bottom: none !important;
+}
+
+@media (min-width: 50rem) {
+  html[data-has-hero] .hero {
+    -moz-box-orient: horizontal !important;
+    -moz-box-direction: normal !important;
+    flex-direction: row !important;
+    text-align: left !important;
+    -moz-box-pack: justify !important;
+    justify-content: space-between !important;
+    gap: 5rem !important;
+    padding-block: 7rem 4rem !important;
+  }
+
+  html[data-has-hero] .hero .stack {
+    -moz-box-align: start !important;
+    align-items: flex-start !important;
+    -moz-box-flex: 1 !important;
+    flex: 1 1 55% !important;
+  }
+
+  html[data-has-hero] .hero img {
+    -moz-box-flex: 1 !important;
+    flex: 1 1 35% !important;
+    max-width: 380px !important;
+    -moz-box-ordinal-group: 3 !important;
+    order: 2 !important; /* image on the right */
+  }
+}
+
+/* Hero Title with Premium Dynamic Gradient */
+html[data-has-hero] h1[data-page-title] {
+  background: -moz-linear-gradient(
+    315deg,
+    hsl(224, 100%, 75%),
+    hsl(260, 100%, 75%),
+    hsl(290, 100%, 72%)
+  );
+  background: linear-gradient(
+    135deg,
+    hsl(224, 100%, 75%),
+    hsl(260, 100%, 75%),
+    hsl(290, 100%, 72%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem) !important;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+/* Tagline Typography styling */
+html[data-has-hero] .hero .tagline {
+  font-family: var(--sl-font) !important;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem) !important;
+  line-height: 1.6;
+  color: var(--sl-color-gray-2);
+  max-width: 44ch;
+  margin-top: 1.25rem !important;
+  font-weight: 400 !important;
+}
+
+/* Hero image glowing effect and micro-interactions */
+html[data-has-hero] .hero img {
+  -webkit-filter: drop-shadow(0 0 50px hsla(224, 100%, 65%, 0.22));
+  filter: drop-shadow(0 0 50px hsla(224, 100%, 65%, 0.22));
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-filter 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -moz-transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    -moz-transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    -moz-transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-filter 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  max-width: 280px;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+html[data-has-hero] .hero img:hover {
+  -moz-transform: scale(1.05) rotate(1.5deg);
+  transform: scale(1.05) rotate(1.5deg);
+  -webkit-filter: drop-shadow(0 0 60px hsla(224, 100%, 65%, 0.35));
+  filter: drop-shadow(0 0 60px hsla(224, 100%, 65%, 0.35));
+}
+
+/* Section Divider / Title Styling */
+html[data-has-hero] .sl-markdown-content h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem) !important;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 5rem !important;
+  margin-bottom: 0 !important;
+  background: -moz-linear-gradient(
+    315deg,
+    var(--sl-color-white),
+    var(--sl-color-gray-2)
+  );
+  background: linear-gradient(
+    135deg,
+    var(--sl-color-white),
+    var(--sl-color-gray-2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: none !important;
+  letter-spacing: -0.02em;
+}
+
+/* Hide anchor icon links for main homepage section headings */
+html[data-has-hero] .sl-heading-wrapper h2 + a {
+  display: none !important;
+}
+
+/* Responsive Card Grid with clean padding and flow */
+html[data-has-hero] .card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 340px), 1fr)
+  ) !important;
+  gap: 1.75rem !important;
+  margin-top: 2.5rem !important;
+}
+
+/* Remove default Starlight grid margins on splash page */
+html[data-has-hero] .content-panel {
+  border-top: none !important;
+  background: transparent !important;
+}
+
+html[data-has-hero] .sl-container {
+  max-width: 76rem !important;
+  padding-inline: 2rem !important;
+}
+
+/* Glassmorphic Link Cards styling */
+.sl-link-card {
+  position: relative !important;
+  background: rgba(18, 20, 26, 0.45) !important; /* semi-transparent slate */
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 18px !important;
+  padding: 2.25rem 2rem !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  -moz-transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease,
+    -moz-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease !important;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease,
+    -moz-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow:
+    0 10px 30px -10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.04) !important;
+  display: -moz-box !important;
+  display: flex !important;
+  -moz-box-orient: horizontal !important;
+  -moz-box-direction: normal !important;
+  flex-direction: row !important;
+  -moz-box-align: center !important;
+  align-items: center !important;
+  -moz-box-pack: justify !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+}
+
+.sl-link-card:hover {
+  -moz-transform: translateY(-6px) !important;
+  transform: translateY(-6px) !important;
+  background-color: rgba(22, 25, 35, 0.65) !important;
+  border-color: rgba(99, 102, 241, 0.35) !important; /* Indigo accent border */
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(99, 102, 241, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Link Card layout inside */
+.sl-link-card .stack {
+  gap: 0.5rem !important;
+}
+
+.sl-link-card a {
+  text-decoration: none !important;
+}
+
+/* Stretch the absolute anchor to span full card */
+.sl-link-card a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.sl-link-card .title {
+  font-family: var(--sl-font-display) !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--sl-color-white) !important;
+  letter-spacing: -0.01em !important;
+  -moz-transition: color 0.3s ease !important;
+  transition: color 0.3s ease !important;
+}
+
+.sl-link-card:hover .title {
+  color: hsl(224, 100%, 75%) !important;
+}
+
+.sl-link-card .description {
+  font-family: var(--sl-font) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+  color: var(--sl-color-gray-3) !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Arrow SVG element inside card */
+.sl-link-card svg.icon {
+  color: var(--sl-color-gray-3) !important;
+  font-size: 1.35rem !important;
+  -moz-transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease,
+    -moz-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease !important;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease,
+    -moz-transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -moz-box-flex: 0 !important;
+  flex: 0 0 auto !important;
+  z-index: 2; /* keep arrow above card click overlay */
+}
+
+.sl-link-card:hover svg.icon {
+  -moz-transform: translate(6px, -2px) scale(1.15) !important;
+  transform: translate(6px, -2px) scale(1.15) !important;
+  color: hsl(224, 100%, 75%) !important;
+}
+
+/* Landing Page Footer Clean Up */
+html[data-has-hero] footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  margin-top: 6rem !important;
+  padding-block: 2.5rem !important;
+}
